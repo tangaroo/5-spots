@@ -23,6 +23,11 @@ export default function Info() {
 
 const Container = styled.div`
   grid-area: info;
+  margin-top: var(--space40);
+
+  @media (min-width: 800px) {
+  margin: 0px;
+  }
 `;
 
 const About = styled.div`

@@ -24,16 +24,23 @@ const fadeIn = keyframes`
 `;
 
 const Main = styled.div`
-  display: grid;
-  grid-template-columns: 15% auto 25%; 
+  display: block;
+  grid-template-columns: 1fr;
   grid-template-areas: "nav content info"; 
   gap: var(--space48);
   min-height: 100vh;
   max-width: 800px; 
-  margin: 0 auto; 
-  padding: var(--space40) 0;
+  margin: 0 var(--space16); 
+  padding: var(--space20) 0;
   box-sizing: border-box;
   animation: ${fadeIn} 1s ease-in-out;
+
+  @media (min-width: 800px) {
+  padding: var(--space40) 0;
+  margin: 0 auto; 
+  display: grid;
+  grid-template-columns: 15% auto 25%; 
+  }
 `;
 
 const Content = styled.div`

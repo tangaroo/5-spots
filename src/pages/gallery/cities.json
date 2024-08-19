@@ -1,16 +1,26 @@
 [
     {
-      "name": "New York",
+        "name": "STOCKHOLM, SE",
+        "slug": "new-york",
+        "thumbnail": "/thumbnails/test.jpg"
+      },
+      {
+        "name": "EDINBURGH, UK",
+        "slug": "new-york",
+        "thumbnail": "/thumbnails/test.jpg"
+      },
+    {
+      "name": "PARIS, FR",
       "slug": "new-york",
       "thumbnail": "/thumbnails/test.jpg"
     },
     {
-      "name": "Paris",
+      "name": "LONDON, UK",
       "slug": "paris",
       "thumbnail": "/thumbnails/test.jpg"
     },
     {
-      "name": "Tokyo",
+      "name": "COPENHAGEN, DK",
       "slug": "tokyo",
       "thumbnail": "/thumbnails/test.jpg"
     }

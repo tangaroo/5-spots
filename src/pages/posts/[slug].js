@@ -6,37 +6,86 @@ import path from "path";
 import matter from "gray-matter";
 import styled from "styled-components";
 import CityInfo from "@/components/CityInfo/CityInfo";
-import Layout from "../../components/Layout/Layout";
+import ContentContainer from "@/components/BlogPosts/ContentContainer";
+import Layout from "@/components/Layout/Layout";
 import { getTimeAgo } from "../../utils/getTimeAgo";
+import Link from 'next/link';
 
 const components = {
-  CityInfo
+  CityInfo,
+  ContentContainer
 };
 
-const Post = ({ frontmatter, mdxSource }) => {
-  const { date, tag } = frontmatter;
+const Post = ({ frontmatter, mdxSource, previousSlug, nextSlug, previousTitle, nextTitle, currentIndex }) => {
+  const { date, title } = frontmatter;
   const timeAgoString = getTimeAgo(date);
+
+  const formatIndex = (index) => {
+    return String(index).padStart(3, '0');
+  };
 
   return (
     <Layout frontmatter={frontmatter}>
-      <Content>
+      <>
         <Heading>
-          <h2>{frontmatter.title}</h2>
-          <h4>
-            {timeAgoString} in {tag && <Tag>{tag}</Tag>}
-          </h4>
+          <h2><span>{formatIndex(currentIndex)}</span> {title}</h2>
+          <h4>Posted {timeAgoString}</h4>
         </Heading>
         <MDXProvider components={components}>
           <MDXRemote {...mdxSource} />
         </MDXProvider>
-      </Content>
+        <Navigation>
+          {previousSlug ? (
+            <StyledLink href={previousSlug}>
+              ← {previousTitle}
+            </StyledLink>
+          ) : (
+            <p>Keep reading</p>
+          )}
+          {nextSlug ? (
+            <StyledLink href={nextSlug}>
+              → {nextTitle}
+            </StyledLink>
+          ) : (
+            " "
+          )}
+        </Navigation>
+      </>
     </Layout>
   );
 };
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), "src", "blog-posts", `${slug}.mdx`);
+  const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
+  const fileNames = fs.readdirSync(postsDirectory);
+
+  // Extract slugs and their associated data
+  const slugs = fileNames.map((fileName) => path.basename(fileName, path.extname(fileName)));
+
+  // Function to get post data from slug
+  const getPostData = (slug) => {
+    const filePath = path.join(postsDirectory, `${slug}.mdx`);
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const { data } = matter(fileContent);
+    return data;
+  };
+
+  // Get all posts with their frontmatter
+  const posts = slugs.map(slug => ({ slug, ...getPostData(slug) }));
+
+  // Sort posts by date in descending order
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // Find the current post index (1-based)
+  const currentIndex = posts.findIndex(post => post.slug === slug) + 1; // Adding 1 to make index 1-based
+
+  // Determine previous and next posts
+  const previousPost = posts[currentIndex - 2] || null; // -2 because index is 1-based
+  const nextPost = posts[currentIndex] || null;
+
+  // Read the current post's content
+  const filePath = path.join(postsDirectory, `${slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data: frontmatter, content } = matter(fileContent);
 
@@ -46,6 +95,11 @@ export async function getStaticProps({ params }) {
     props: {
       frontmatter,
       mdxSource,
+      previousSlug: previousPost ? `/posts/${previousPost.slug}` : null,
+      nextSlug: nextPost ? `/posts/${nextPost.slug}` : null,
+      previousTitle: previousPost ? previousPost.title : null,
+      nextTitle: nextPost ? nextPost.title : null,
+      currentIndex, // Pass currentIndex for displaying
     },
   };
 }
@@ -69,23 +123,34 @@ export async function getStaticPaths() {
 
 export default Post;
 
-const Content = styled.div`
-  p {
-    margin-bottom: var(--space32);
-  }
-
-  a:hover {
-    border-bottom: 1px solid;
-  }
-`;
-
 const Heading = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-bottom: var(--space48);
+
+  span {
+  color: var(--accent);
+  }
+
+  @media (min-width: 400px) {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  }
 `;
 
-const Tag = styled.span`
-  font: 400 var(--type12) / 1.4 var(--accent-font), monospace;
-  color: var(--greytext);
-  background: var(--background-card);
-  padding: var(--spacing-unit);
+const Navigation = styled.div`
+  margin-top: var(--space48);
+  display: flex;
+  justify-content: space-between;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

@@ -97,8 +97,13 @@ const Content = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: var(--space8);
+  margin-bottom: var(--space32);
+
+  @media (min-width: 800px){
+  flex-direction: column;
+  }
 `;
 
 const StyledLink = styled(Link)`

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { useMemo } from "react";
 
 export default function BlogPosts({ posts }) {
     
