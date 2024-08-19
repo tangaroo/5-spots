@@ -9,12 +9,10 @@ export default function Gallery() {
       <GalleryContainer>
         {cities.map(city => (
           <Link key={city.slug} href={`/gallery/${city.slug}`} passHref>
-            <StyledLink>
-              <CityCard>
-                <Thumbnail src={city.thumbnail} alt={`${city.name} Thumbnail`} />
-                <CityName>{city.name}</CityName>
-              </CityCard>
-            </StyledLink>
+            <CityCard>
+              <Thumbnail src={city.thumbnail} alt={`${city.name} Thumbnail`} />
+              <CityName>{city.name}</CityName>
+            </CityCard>
           </Link>
         ))}
       </GalleryContainer>
@@ -29,18 +27,13 @@ const GalleryContainer = styled.div`
   padding: 20px;
 `;
 
-const StyledLink = styled.a`
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer; /* Ensure cursor is set here */
-`;
-
 const CityCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  cursor: pointer; /* Ensure cursor is set here */
+  
   &:hover {
     transform: translateY(-4px);
   }

@@ -4,6 +4,7 @@ import "../../styles/styles";
 export default function Info() {
   return (
     <Container>
+      <Content>
       <About>
         <h2>ABOUT</h2>
         <p>
@@ -17,6 +18,7 @@ export default function Info() {
           cassandratang.com
         </StyledLink>
       </Disclaimer>
+      </Content>
     </Container>
   );
 }
@@ -29,6 +31,13 @@ const Container = styled.div`
   margin: 0px;
   }
 `;
+
+const Content = styled.div`
+  position: sticky;
+  top: var(--space20);
+  right: 0;
+  z-index: 10;
+`
 
 const About = styled.div`
   display: block;

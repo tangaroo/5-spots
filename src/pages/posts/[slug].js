@@ -11,6 +11,7 @@ import { getTimeAgo } from "../../utils/getTimeAgo";
 import Link from 'next/link';
 
 import CityInfo from "@/components/CityInfo/CityInfo";
+import Card from "@/components/BlogPosts/Card";
 import Section from "@/components/BlogPosts/Section";
 import ContentContainer from "@/components/BlogPosts/ContentContainer";
 import ImageWithText from "@/components/BlogPosts/ImageWithText";
@@ -19,6 +20,7 @@ import IconWithText from "@/components/IconWithText/IconWithText";
 const components = {
   CityInfo,
   Section,
+  Card,
   ContentContainer,
   IconWithText,
   ImageWithText
@@ -37,7 +39,7 @@ const Post = ({ frontmatter, mdxSource, previousSlug, nextSlug, previousTitle, n
       <>
         <Heading>
           <h1><span>{formatIndex(currentIndex)}</span> {title}</h1>
-          <h4>Posted {timeAgoString}</h4>
+          <h2>Posted {timeAgoString}</h2>
         </Heading>
         <MDXProvider components={components}>
           <MDXRemote {...mdxSource} />

@@ -22,7 +22,7 @@ export default function CityInfo({
 
 const Container = styled.div`
   display: flex;
-  border: 1px solid var(--grey);
+  border: 1px solid var(--light-grey);
   margin: 0px 0px var(--space40) 0px;
 `;
 
@@ -32,7 +32,7 @@ const Box = styled.div`
   box-sizing: border-box;
 
   &:first-of-type {
-    border-right: 1px solid var(--grey);
+    border-right: 1px solid var(--light-grey);
   }
 
   &:last-child {

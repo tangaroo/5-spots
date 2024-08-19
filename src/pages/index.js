@@ -4,17 +4,18 @@ import matter from 'gray-matter';
 
 import BlogPosts from '../components/BlogPosts/BlogPosts';
 import Layout from '../components/Layout/Layout';
+import Banner from '@/components/Banner/Banner';
 
 export default function Home({ posts }) {
   return (
     <Layout>
+      <Banner date="23-09-2024" place="LISBON, PT" status="Planned" />
       <BlogPosts posts={posts} />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  // Adjusted path to include 'src'
   const postsDirectory = path.join(process.cwd(), 'src', 'blog-posts');
   const files = fs.readdirSync(postsDirectory);
 

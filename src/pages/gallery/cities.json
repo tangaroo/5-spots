@@ -1,7 +1,7 @@
 [
     {
         "name": "STOCKHOLM, SE",
-        "slug": "new-york",
+        "slug": "stockholm",
         "thumbnail": "/gallery-images/R0000510.jpg",
         "images": [
           "/gallery-images/R0000510.jpg"
@@ -10,7 +10,7 @@
       },
       {
         "name": "EDINBURGH, UK",
-        "slug": "new-york",
+        "slug": "edinburgh",
         "thumbnail": "/gallery-images/R0000510.jpg",
         "images": [
           "/images/paris1.jpg",
@@ -20,7 +20,7 @@
       },
     {
       "name": "PARIS, FR",
-      "slug": "new-york",
+      "slug": "paris",
       "thumbnail": "/gallery-images/R0000510.jpg",
       "images": [
         "/images/paris1.jpg",
@@ -30,18 +30,26 @@
     },
     {
       "name": "LONDON, UK",
-      "slug": "paris",
-      "thumbnail": "/gallery-images/R0000460.jpg",
+      "slug": "london",
+      "thumbnail": "/gallery-images/london/R0000600.jpg",
       "images": [
-        "/gallery-images/R0000510.jpg",
-        "/gallery-images/R0000460.jpg",
-        "/gallery-images/R0000594.jpg"
+        "/gallery-images/london/R0000510.jpg",
+        "/gallery-images/london/R0000594.jpg",
+        "/gallery-images/london/R0000481.jpg",
+        "/gallery-images/london/R0000600.jpg",
+        "/gallery-images/london/R0000424.jpg",
+        "/gallery-images/london/R0000532.jpg",
+        "/gallery-images/london/R0000654.jpg",
+        "/gallery-images/london/R0000452.jpg",
+        "/gallery-images/london/R0000460.jpg",
+        "/gallery-images/london/R0000435.jpg"
+
       ],
       "description": "Ricoh GR IIIx / 08.2024"
     },
     {
       "name": "COPENHAGEN, DK",
-      "slug": "tokyo",
+      "slug": "copenhagen",
       "thumbnail": "/gallery-images/R0000594.jpg",
       "images": [
         "/images/paris1.jpg",

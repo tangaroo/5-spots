@@ -49,12 +49,12 @@ body {
 }
 
 ::selection {
-  background: var(--highlight);
-  color: var(--dark-base);
+  background: var(--dark);
+  color: var(--background);
 }
 ::-moz-selection {
-  background: var(--highlight);
-  color: var(--dark-base);
+  background: var(--dark);
+  color: var(--background);
 }
 
 h1 {
@@ -69,15 +69,9 @@ h2 {
 }
 
 h3 {
-  font: 400 var(--type16)/1.4 var(--primary-font), monospace;
-  margin: 0px 0px var(--space8) 0px;
+  font: 400 var(--type14)/1.4 var(--primary-font), monospace;
+  margin: 0px;
   color: var(--grey);
-}
-
-h4 {
-  font: 400 var(--type12)/1.4 var(--primary-font), monospace;
-  margin: var(--space8) 0px var(--space8) 0px;
-  color: var(--light-grey);
 }
 
 p, label {

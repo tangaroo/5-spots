@@ -52,7 +52,7 @@ const Row = styled.div`
   align-items: center;
   width: 100%;
   padding-top: var(--spacing-unit);
-  margin: var(--space8) 0px;
+  margin: 0px 0px var(--space8) 0px;
   transition: background-color 0.3s ease;
   
   &:hover {

@@ -30,8 +30,9 @@ export default function Navigation() {
   );
 
   return (
-    <Content>
-      <h1>{logo} 5 SPOTS</h1>
+    <Container>
+      <Content>
+      <Link href="/"><h1>{logo} 5 SPOTS</h1></Link>
       <Nav>
         <StyledLink href="/" selected={isActive("/") || router.pathname.startsWith("/posts")}>
           Blog
@@ -40,17 +41,26 @@ export default function Navigation() {
           Gallery
         </StyledLink>
       </Nav>
-    </Content>
+      </Content>
+    </Container>
   );
 }
 
-const Content = styled.div`
+const Container = styled.div`
   grid-area: nav;
 
   h1 {
     margin-bottom: var(--space20);
+    color: var(--dark);
   }
 `;
+
+const Content = styled.div`
+  position: sticky;
+  top: var(--space20);
+  right: 0;
+  z-index: 10;
+`
 
 const Nav = styled.nav`
   display: flex;
