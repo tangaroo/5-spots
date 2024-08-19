@@ -1,0 +1,17 @@
+[
+    {
+      "name": "New York",
+      "slug": "new-york",
+      "thumbnail": "/thumbnails/test.jpg"
+    },
+    {
+      "name": "Paris",
+      "slug": "paris",
+      "thumbnail": "/thumbnails/test.jpg"
+    },
+    {
+      "name": "Tokyo",
+      "slug": "tokyo",
+      "thumbnail": "/thumbnails/test.jpg"
+    }
+  ]

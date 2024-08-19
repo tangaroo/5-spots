@@ -9,9 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.5",
+    "frontmatter": "^0.0.3",
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
+    "next-mdx-remote": "^5.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "styled-component": "^2.8.0",
+    "styled-components": "^6.1.12"
   },
   "devDependencies": {
     "eslint": "^8",
