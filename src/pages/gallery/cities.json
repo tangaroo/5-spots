@@ -2,26 +2,51 @@
     {
         "name": "STOCKHOLM, SE",
         "slug": "new-york",
-        "thumbnail": "/thumbnails/test.jpg"
+        "thumbnail": "/gallery-images/R0000510.jpg",
+        "images": [
+          "/gallery-images/R0000510.jpg"
+        ],
+        "description": "Paris, the capital city of France, is known for its rich history and beautiful architecture."
       },
       {
         "name": "EDINBURGH, UK",
         "slug": "new-york",
-        "thumbnail": "/thumbnails/test.jpg"
+        "thumbnail": "/gallery-images/R0000510.jpg",
+        "images": [
+          "/images/paris1.jpg",
+          "/images/paris2.jpg"
+        ],
+        "description": "Paris, the capital city of France, is known for its rich history and beautiful architecture."
       },
     {
       "name": "PARIS, FR",
       "slug": "new-york",
-      "thumbnail": "/thumbnails/test.jpg"
+      "thumbnail": "/gallery-images/R0000510.jpg",
+      "images": [
+        "/images/paris1.jpg",
+        "/images/paris2.jpg"
+      ],
+      "description": "Paris, the capital city of France, is known for its rich history and beautiful architecture."
     },
     {
       "name": "LONDON, UK",
       "slug": "paris",
-      "thumbnail": "/thumbnails/test.jpg"
+      "thumbnail": "/gallery-images/R0000460.jpg",
+      "images": [
+        "/gallery-images/R0000510.jpg",
+        "/gallery-images/R0000460.jpg",
+        "/gallery-images/R0000594.jpg"
+      ],
+      "description": "Ricoh GR IIIx / 08.2024"
     },
     {
       "name": "COPENHAGEN, DK",
       "slug": "tokyo",
-      "thumbnail": "/thumbnails/test.jpg"
+      "thumbnail": "/gallery-images/R0000594.jpg",
+      "images": [
+        "/images/paris1.jpg",
+        "/images/paris2.jpg"
+      ],
+      "description": "Paris, the capital city of France, is known for its rich history and beautiful architecture."
     }
   ]

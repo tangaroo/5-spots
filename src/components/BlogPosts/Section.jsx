@@ -1,16 +1,12 @@
 import styled from "styled-components";
 import "../../styles/styles";
 
-export default function ContentContainer({ children }) {
+export default function Section ({ children }) {
   return <Container>{children}</Container>;
 }
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: var(--space32);
-
-  a:hover {
-    border-bottom: 1px solid;
-  }
+  gap: var(--space16);
 `;

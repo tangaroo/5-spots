@@ -5,6 +5,12 @@ import styled from "styled-components";
 export default function Navigation() {
   const router = useRouter();
 
+  // Helper function to determine if a link is active
+  const isActive = (href) => {
+    // Check if the current path matches or starts with href plus a slash
+    return router.pathname === href || router.pathname.startsWith(`${href}/`);
+  };
+
   const logo = (
     <svg
       width="12"
@@ -13,62 +19,13 @@ export default function Navigation() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect
-        x="4"
-        y="8.5"
-        width="4"
-        height="4"
-        transform="rotate(-180 4 8.5)"
-        fill="black"
-      />
-      <rect
-        x="4"
-        y="12.5"
-        width="4"
-        height="4"
-        transform="rotate(-180 4 12.5)"
-        fill="black"
-      />
-      <rect
-        x="12"
-        y="4.5"
-        width="4"
-        height="4"
-        transform="rotate(-180 12 4.5)"
-        fill="black"
-      />
-      <rect
-        x="12"
-        y="12.5"
-        width="4"
-        height="4"
-        transform="rotate(-180 12 12.5)"
-        fill="black"
-      />
-      <rect
-        x="8"
-        y="4.5"
-        width="4"
-        height="4"
-        transform="rotate(-180 8 4.5)"
-        fill="black"
-      />
-      <rect
-        x="4"
-        y="4.5"
-        width="4"
-        height="4"
-        transform="rotate(-180 4 4.5)"
-        fill="black"
-      />
-      <rect
-        x="8"
-        y="8.5"
-        width="4"
-        height="4"
-        transform="rotate(-180 8 8.5)"
-        fill="black"
-      />
+      <rect x="4" y="8.5" width="4" height="4" transform="rotate(-180 4 8.5)" fill="black" />
+      <rect x="4" y="12.5" width="4" height="4" transform="rotate(-180 4 12.5)" fill="black" />
+      <rect x="12" y="4.5" width="4" height="4" transform="rotate(-180 12 4.5)" fill="black" />
+      <rect x="12" y="12.5" width="4" height="4" transform="rotate(-180 12 12.5)" fill="black" />
+      <rect x="8" y="4.5" width="4" height="4" transform="rotate(-180 8 4.5)" fill="black" />
+      <rect x="4" y="4.5" width="4" height="4" transform="rotate(-180 4 4.5)" fill="black" />
+      <rect x="8" y="8.5" width="4" height="4" transform="rotate(-180 8 8.5)" fill="black" />
     </svg>
   );
 
@@ -76,10 +33,10 @@ export default function Navigation() {
     <Content>
       <h1>{logo} 5 SPOTS</h1>
       <Nav>
-        <StyledLink href="/" selected={router.pathname === "/"}>
+        <StyledLink href="/" selected={isActive("/") || router.pathname.startsWith("/posts")}>
           Blog
         </StyledLink>
-        <StyledLink href="/gallery" selected={router.pathname === "/pages/gallery"}>
+        <StyledLink href="/gallery" selected={isActive("/gallery")}>
           Gallery
         </StyledLink>
       </Nav>
@@ -102,7 +59,7 @@ const Nav = styled.nav`
   margin-bottom: var(--space32);
 
   @media (min-width: 800px){
-  flex-direction: column;
+    flex-direction: column;
   }
 `;
 
@@ -117,6 +74,7 @@ const StyledLink = styled(Link)`
   transition: border-bottom 0.1s ease;
   
   &:hover {
+    cursor: pointer;
     color: var(--grey);
     border-bottom: 1px solid var(--grey);
   }

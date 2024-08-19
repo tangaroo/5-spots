@@ -9,10 +9,12 @@ export default function Gallery() {
       <GalleryContainer>
         {cities.map(city => (
           <Link key={city.slug} href={`/gallery/${city.slug}`} passHref>
-            <CityCard>
-              <Thumbnail src={city.thumbnail} alt={`${city.name} Thumbnail`} />
-              <CityName>{city.name}</CityName>
-            </CityCard>
+            <StyledLink>
+              <CityCard>
+                <Thumbnail src={city.thumbnail} alt={`${city.name} Thumbnail`} />
+                <CityName>{city.name}</CityName>
+              </CityCard>
+            </StyledLink>
           </Link>
         ))}
       </GalleryContainer>
@@ -27,19 +29,32 @@ const GalleryContainer = styled.div`
   padding: 20px;
 `;
 
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer; /* Ensure cursor is set here */
+`;
+
 const CityCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 const Thumbnail = styled.img`
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  transition: opacity 0.3s ease;
+
+  ${CityCard}:hover & {
+    opacity: 0.9; 
+  }
 `;
 
 const CityName = styled.p`
@@ -48,4 +63,9 @@ const CityName = styled.p`
   text-align: left; 
   font-size: 1em;
   color: var(--dark);
+  transition: color 0.3s ease;
+
+  ${CityCard}:hover & {
+    color: var(--grey);
+  }
 `;

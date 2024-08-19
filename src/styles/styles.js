@@ -82,19 +82,24 @@ h4 {
 
 p, label {
   font: 400 var(--type14)/1.4 var(--primary-font), monospace;
-  vertical-align: middle;
+  vertical-align: baseline;
   margin: 0px;
 }
 
 a {
   font: 400 var(--type14)/1.4 var(--primary-font), monospace;
-  color: var(--dark);
+  color: var(--grey);
   text-decoration: none;
   transition: 0.2s all;
 
   :hover { 
     cursor: pointer;
   }
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 0px;
 }
 `
 ;

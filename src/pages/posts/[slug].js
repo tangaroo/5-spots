@@ -5,15 +5,23 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import styled from "styled-components";
-import CityInfo from "@/components/CityInfo/CityInfo";
-import ContentContainer from "@/components/BlogPosts/ContentContainer";
+
 import Layout from "@/components/Layout/Layout";
 import { getTimeAgo } from "../../utils/getTimeAgo";
 import Link from 'next/link';
 
+import CityInfo from "@/components/CityInfo/CityInfo";
+import Section from "@/components/BlogPosts/Section";
+import ContentContainer from "@/components/BlogPosts/ContentContainer";
+import ImageWithText from "@/components/BlogPosts/ImageWithText";
+import IconWithText from "@/components/IconWithText/IconWithText";
+
 const components = {
   CityInfo,
-  ContentContainer
+  Section,
+  ContentContainer,
+  IconWithText,
+  ImageWithText
 };
 
 const Post = ({ frontmatter, mdxSource, previousSlug, nextSlug, previousTitle, nextTitle, currentIndex }) => {
@@ -28,14 +36,14 @@ const Post = ({ frontmatter, mdxSource, previousSlug, nextSlug, previousTitle, n
     <Layout frontmatter={frontmatter}>
       <>
         <Heading>
-          <h2><span>{formatIndex(currentIndex)}</span> {title}</h2>
+          <h1><span>{formatIndex(currentIndex)}</span> {title}</h1>
           <h4>Posted {timeAgoString}</h4>
         </Heading>
         <MDXProvider components={components}>
           <MDXRemote {...mdxSource} />
         </MDXProvider>
         <Navigation>
-          {previousSlug ? (
+          {previousSlug ? ( 
             <StyledLink href={previousSlug}>
               ← {previousTitle}
             </StyledLink>
@@ -44,7 +52,7 @@ const Post = ({ frontmatter, mdxSource, previousSlug, nextSlug, previousTitle, n
           )}
           {nextSlug ? (
             <StyledLink href={nextSlug}>
-              → {nextTitle}
+              {nextTitle} →
             </StyledLink>
           ) : (
             " "
@@ -77,12 +85,18 @@ export async function getStaticProps({ params }) {
   // Sort posts by date in descending order
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // Find the current post index (1-based)
-  const currentIndex = posts.findIndex(post => post.slug === slug) + 1; // Adding 1 to make index 1-based
+  // Find the index of the current post
+  const originalIndex = posts.findIndex(post => post.slug === slug);
 
-  // Determine previous and next posts
-  const previousPost = posts[currentIndex - 2] || null; // -2 because index is 1-based
-  const nextPost = posts[currentIndex] || null;
+  // Total number of posts
+  const numberOfPosts = posts.length;
+
+  // Calculate currentIndex in a reversed manner
+  const currentIndex = numberOfPosts - originalIndex;
+
+  // Determine next and previous posts
+  const previousPost = posts[originalIndex + 1] || null; // Older post
+  const nextPost = posts[originalIndex - 1] || null; // Newer post
 
   // Read the current post's content
   const filePath = path.join(postsDirectory, `${slug}.mdx`);
@@ -129,13 +143,13 @@ const Heading = styled.div`
   margin-bottom: var(--space48);
 
   span {
-  color: var(--accent);
+    color: var(--accent);
   }
 
   @media (min-width: 400px) {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 

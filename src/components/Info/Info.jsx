@@ -7,7 +7,7 @@ export default function Info() {
       <About>
         <h2>ABOUT</h2>
         <p>
-          A mini blog containing 5 must-see, must do or must try places per
+          A mini blog containing 5 conceptual places per 
           city that have been carefully curated from my travels.
         </p>
       </About>
@@ -36,6 +36,10 @@ const About = styled.div`
 
   a:hover {
     border-bottom: 1px solid red;
+  }
+
+  h2 {
+    margin-bottom: var(--space16);
   }
 `;
 

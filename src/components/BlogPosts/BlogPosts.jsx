@@ -56,7 +56,8 @@ const Row = styled.div`
   transition: background-color 0.3s ease;
   
   &:hover {
-    background-color: var(--dark);  
+    background-color: var(--dark); 
+    cursor: pointer; 
   }
 `;
 
@@ -70,6 +71,7 @@ const StyledLink = styled.div`
 
   &:hover {
     color: var(--background);  
+    cursor: pointer;
   }
 `;
 
