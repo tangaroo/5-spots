@@ -1,6 +1,6 @@
 ## 5 Spots
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [styled-components] (https://styled-components.com/).
+This is a [Next.js](https://nextjs.org/) project built with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [styled-components]([https://nextjs.org/](https://styled-components.com/)). Deployed in Vercel.
 
 It is a mini travel blog and photo gallery of all of my travels so far. With each city, 5 memorable places are highlighted in various categories. 
 
