@@ -39,7 +39,7 @@ const Post = ({ frontmatter, mdxSource, previousSlug, nextSlug, previousTitle, n
       <>
         <Heading>
           <h1><span>{formatIndex(currentIndex)}</span> {title}</h1>
-          <h2>Posted {timeAgoString}</h2>
+          <h1>{timeAgoString}</h1>
         </Heading>
         <MDXProvider components={components}>
           <MDXRemote {...mdxSource} />
@@ -50,7 +50,7 @@ const Post = ({ frontmatter, mdxSource, previousSlug, nextSlug, previousTitle, n
               ← {previousTitle}
             </StyledLink>
           ) : (
-            <p>Keep reading</p>
+            <p> </p>
           )}
           {nextSlug ? (
             <StyledLink href={nextSlug}>

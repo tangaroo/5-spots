@@ -23,8 +23,7 @@ export default function Gallery() {
 const GalleryContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
-  gap: 20px;
-  padding: 20px;
+  gap: var(--space32);
 `;
 
 const CityCard = styled.div`
@@ -32,7 +31,7 @@ const CityCard = styled.div`
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer; /* Ensure cursor is set here */
+  cursor: pointer; 
   
   &:hover {
     transform: translateY(-4px);
@@ -54,7 +53,6 @@ const CityName = styled.p`
   width: 100%;
   margin-top: var(--space8);  
   text-align: left; 
-  font-size: 1em;
   color: var(--dark);
   transition: color 0.3s ease;
 

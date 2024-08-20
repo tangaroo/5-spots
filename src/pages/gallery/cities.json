@@ -1,34 +1,5 @@
 [
     {
-        "name": "STOCKHOLM, SE",
-        "slug": "stockholm",
-        "thumbnail": "/gallery-images/R0000510.jpg",
-        "images": [
-          "/gallery-images/R0000510.jpg"
-        ],
-        "description": "Paris, the capital city of France, is known for its rich history and beautiful architecture."
-      },
-      {
-        "name": "EDINBURGH, UK",
-        "slug": "edinburgh",
-        "thumbnail": "/gallery-images/R0000510.jpg",
-        "images": [
-          "/images/paris1.jpg",
-          "/images/paris2.jpg"
-        ],
-        "description": "Paris, the capital city of France, is known for its rich history and beautiful architecture."
-      },
-    {
-      "name": "PARIS, FR",
-      "slug": "paris",
-      "thumbnail": "/gallery-images/R0000510.jpg",
-      "images": [
-        "/images/paris1.jpg",
-        "/images/paris2.jpg"
-      ],
-      "description": "Paris, the capital city of France, is known for its rich history and beautiful architecture."
-    },
-    {
       "name": "LONDON, UK",
       "slug": "london",
       "thumbnail": "/gallery-images/london/R0000600.jpg",
@@ -48,13 +19,60 @@
       "description": "Ricoh GR IIIx / 08.2024"
     },
     {
-      "name": "COPENHAGEN, DK",
-      "slug": "copenhagen",
-      "thumbnail": "/gallery-images/R0000594.jpg",
+      "name": "STOCKHOLM, SE",
+      "slug": "stockholm",
+      "thumbnail": "/gallery-images/stockholm/R0000356.jpg",
       "images": [
-        "/images/paris1.jpg",
-        "/images/paris2.jpg"
+        "/gallery-images/paris/R0000142.jpg",
+        "/gallery-images/paris/R0000117.jpg",
+        "/gallery-images/paris/R0000135.jpg"
       ],
       "description": "Paris, the capital city of France, is known for its rich history and beautiful architecture."
+    },
+    {
+      "name": "PARIS, FR",
+      "slug": "paris",
+      "thumbnail": "/gallery-images/paris/R0000142.jpg",
+      "images": [
+        "/gallery-images/paris/R0000142.jpg",
+        "/gallery-images/paris/R0000081.jpg",
+        "/gallery-images/paris/R0000092.jpg",
+        "/gallery-images/paris/R0000117.jpg",
+        "/gallery-images/paris/R0000067.jpg",
+        "/gallery-images/paris/R0000153.jpg",
+        "/gallery-images/paris/R0000123.jpg",
+        "/gallery-images/paris/R0000082.jpg",
+        "/gallery-images/paris/R0000124.jpg",
+        "/gallery-images/paris/R0000135.jpg"
+      ],
+      "description": "Ricoh GR IIIx / 02.2024"
+    },
+    {
+      "name": "COPENHAGEN, DK",
+      "slug": "copenhagen",
+      "thumbnail": "/gallery-images/copenhagen/R0000050.jpg",
+      "images": [
+        "/gallery-images/copenhagen/R0000039.jpg",
+        "/gallery-images/copenhagen/R0000053.jpg",
+        "/gallery-images/copenhagen/R0000055.jpg",
+        "/gallery-images/copenhagen/R0000043.jpg",
+        "/gallery-images/copenhagen/R0000032.jpg",
+        "/gallery-images/copenhagen/R0000050.jpg"
+      ],
+      "description": "Ricoh GR IIIx / 01.2024"
+    },
+    {
+      "name": "GLASGOW, UK",
+      "slug": "glasgow",
+      "thumbnail": "/gallery-images/glasgow/DSC03928.jpg",
+      "images": [
+        "/gallery-images/glasgow/DSC03928.jpg",
+        "/gallery-images/glasgow/DSC03902.jpg",
+        "/gallery-images/glasgow/DSC03875.jpg",
+        "/gallery-images/glasgow/R0000279.jpg",
+        "/gallery-images/glasgow/R0000408.jpg",
+        "/gallery-images/glasgow/R0000373.jpg"
+      ],
+      "description": "Ricoh GR IIIx and Sony A7 / 2022-2024"
     }
   ]
