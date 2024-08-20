@@ -23,11 +23,18 @@
       "slug": "stockholm",
       "thumbnail": "/gallery-images/stockholm/R0000356.jpg",
       "images": [
-        "/gallery-images/paris/R0000142.jpg",
-        "/gallery-images/paris/R0000117.jpg",
-        "/gallery-images/paris/R0000135.jpg"
+        "/gallery-images/stockholm/R0000341.jpg",
+        "/gallery-images/stockholm/R0000311.jpg",
+        "/gallery-images/stockholm/R0000326.jpg",
+        "/gallery-images/stockholm/R0000321.jpg",
+        "/gallery-images/stockholm/R0000323.jpg",
+        "/gallery-images/stockholm/R0000369.jpg",
+        "/gallery-images/stockholm/R0000349.jpg",
+        "/gallery-images/stockholm/R0000350.jpg",
+        "/gallery-images/stockholm/R0000356.jpg",
+        "/gallery-images/stockholm/R0000357.jpg"
       ],
-      "description": "Paris, the capital city of France, is known for its rich history and beautiful architecture."
+      "description": "Ricoh GR IIIx / 06.2024"
     },
     {
       "name": "PARIS, FR",
@@ -74,5 +81,17 @@
         "/gallery-images/glasgow/R0000373.jpg"
       ],
       "description": "Ricoh GR IIIx and Sony A7 / 2022-2024"
+    },
+    {
+      "name": "HONG KONG, HK",
+      "slug": "hongkong",
+      "thumbnail": "/gallery-images/hongkong/DSC04149.jpg",
+      "images": [
+        "/gallery-images/hongkong/DSC04145.jpg",
+        "/gallery-images/hongkong/DSC04149.jpg",
+        "/gallery-images/hongkong/DSC04167.jpg",
+        "/gallery-images/hongkong/DSC04187.jpg"
+      ],
+      "description": "Sony A7 / 01.2023"
     }
   ]
