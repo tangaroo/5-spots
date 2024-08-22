@@ -65,11 +65,12 @@ const Content = styled.div`
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
-  gap: var(--space8);
+  gap: var(--space20);
   margin-bottom: var(--space32);
 
   @media (min-width: 800px){
     flex-direction: column;
+    gap: var(--space8);
   }
 `;
 

@@ -18,7 +18,7 @@ const Container = styled.div`
   justify-content: space-between; 
   align-items: center;
   gap: var(--space12);
-  padding: var(--space16);
+  padding: var(--space12) var(--space16);
   background-color: #F2F2F2;
   margin-bottom: var(--space32);
 `;

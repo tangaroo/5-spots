@@ -24,7 +24,7 @@ export default function SEO({ title, description, image, url }) {
             <meta name="twitter:description" content={seo.description} />
             <meta name="twitter:image" content={seo.image} />
 
-            <link rel="icon" href="/favicon.svg" />
+            <link rel="icon" href="/logo.svg" />
             <meta
                 httpEquiv="Content-Type"
                 content="text/html; charset=utf-8"

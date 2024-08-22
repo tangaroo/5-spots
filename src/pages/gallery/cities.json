@@ -83,15 +83,32 @@
       "description": "Ricoh GR IIIx and Sony A7 / 2022-2024"
     },
     {
+      "name": "BERLIN, DE",
+      "slug": "berlin",
+      "thumbnail": "/gallery-images/berlin/DSC02619.jpg",
+      "images": [
+        "/gallery-images/berlin/DSC03655.jpg",
+        "/gallery-images/berlin/DSC03626.jpg",
+        "/gallery-images/berlin/DSC02584.jpg",
+        "/gallery-images/berlin/DSC02619.jpg",
+        "/gallery-images/berlin/DSC02799.jpg",
+        "/gallery-images/berlin/DSC02601.jpg"
+      ],
+      "description": "Sony A7 / 2018-2021"
+    },
+    {
       "name": "HONG KONG, HK",
       "slug": "hongkong",
       "thumbnail": "/gallery-images/hongkong/DSC04149.jpg",
       "images": [
         "/gallery-images/hongkong/DSC04145.jpg",
         "/gallery-images/hongkong/DSC04149.jpg",
+        "/gallery-images/hongkong/DSC01492.jpg",
+        "/gallery-images/hongkong/DSC01698.jpg",
+        "/gallery-images/hongkong/DSC02321.jpg",
         "/gallery-images/hongkong/DSC04167.jpg",
         "/gallery-images/hongkong/DSC04187.jpg"
       ],
-      "description": "Sony A7 / 01.2023"
+      "description": "Sony A7 / 2018-2023"
     }
   ]
