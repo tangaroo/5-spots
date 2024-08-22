@@ -30,6 +30,33 @@ export default function CityPage() {
   );
 }
 
+export async function getStaticPaths() {
+  const cities = require('../gallery/cities.json'); // Adjust the path if necessary
+  const paths = cities.map((city) => ({
+    params: { slug: city.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false, // Change to 'blocking' or 'true' for different fallback behavior
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const cities = require('../gallery/cities.json'); // Adjust the path if necessary
+  const city = cities.find((city) => city.slug === params.slug);
+
+  if (!city) {
+    return { notFound: true }; // Handle cases where city is not found
+  }
+
+  return {
+    props: {
+      city,
+    },
+  };
+}
+
 const CityContainer = styled.div`
   padding: 0px;
 
