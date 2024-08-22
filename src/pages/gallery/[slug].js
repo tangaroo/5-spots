@@ -1,7 +1,10 @@
-import { useRouter } from "next/router";
-import styled from "styled-components";
-import Layout from "../../components/Layout/Layout";
-import cities from "../gallery/cities.json";
+import { useRouter } from 'next/router';
+import Image from 'next/image'; 
+
+import styled from 'styled-components';
+
+import Layout from '../../components/Layout/Layout';
+import cities from '../gallery/cities.json';
 
 export default function CityPage() {
   const router = useRouter();
@@ -21,7 +24,13 @@ export default function CityPage() {
         <Images>
           {city.images.map((image, index) => (
             <ImageWrapper key={index}>
-              <img src={image} alt={city.name} />
+              <Image
+                src={image}
+                alt={city.name}
+                fill={true}
+                style={{ objectFit: 'cover' }} // Maintain aspect ratio and cover the wrapper area
+              />
+              
             </ImageWrapper>
           ))}
         </Images>
@@ -72,8 +81,8 @@ const Images = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  img {
-    width: 100%;
-    height: auto;
-  }
+  /* Remove styles for img and use a wrapper if necessary for layout */
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust if necessary */
 `;

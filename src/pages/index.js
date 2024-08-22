@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
-import "../styles/styles.js"
 
 import BlogPosts from '../components/BlogPosts/BlogPosts';
 import Layout from '../components/Layout/Layout';

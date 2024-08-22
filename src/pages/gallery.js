@@ -1,5 +1,3 @@
-import "../styles/styles.js"
-
 import Link from 'next/link';
 import Layout from '../components/Layout/Layout';
 import styled from 'styled-components';
