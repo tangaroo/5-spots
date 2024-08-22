@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import "../../styles/styles"
+import "../styles/styles.js"
 import Navigation from "../Navigation/Navigation";
 import Info from "../Info/Info";
 import { GlobalStyle } from "@/styles/styles";
