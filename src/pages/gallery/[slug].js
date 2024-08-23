@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
-import Image from 'next/image'; 
+import { useRouter } from "next/router";
+import Image from "next/image";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Layout from '../../components/Layout/Layout';
-import cities from '../gallery/cities.json';
+import Layout from "../../components/Layout/Layout";
+import cities from "../gallery/cities.json";
 
 export default function CityPage() {
   const router = useRouter();
@@ -27,10 +27,10 @@ export default function CityPage() {
               <Image
                 src={image}
                 alt={city.name}
-                fill={true}
-                style={{ objectFit: 'cover' }} // Maintain aspect ratio and cover the wrapper area
+                width={800}  
+                height={600}
+                style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
               />
-              
             </ImageWrapper>
           ))}
         </Images>
@@ -40,23 +40,23 @@ export default function CityPage() {
 }
 
 export async function getStaticPaths() {
-  const cities = require('../gallery/cities.json'); // Adjust the path if necessary
+  const cities = require("../gallery/cities.json");
   const paths = cities.map((city) => ({
     params: { slug: city.slug },
   }));
 
   return {
     paths,
-    fallback: false, // Change to 'blocking' or 'true' for different fallback behavior
+    fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const cities = require('../gallery/cities.json'); // Adjust the path if necessary
+  const cities = require("../gallery/cities.json");
   const city = cities.find((city) => city.slug === params.slug);
 
   if (!city) {
-    return { notFound: true }; // Handle cases where city is not found
+    return { notFound: true };
   }
 
   return {
@@ -81,8 +81,10 @@ const Images = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  /* Remove styles for img and use a wrapper if necessary for layout */
-  position: relative;
-  width: 100%;
-  height: auto; /* Adjust if necessary */
+  width: 100%; 
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 `;
