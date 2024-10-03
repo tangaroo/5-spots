@@ -9,7 +9,7 @@ import Banner from '@/components/Banner/Banner';
 export default function Home({ posts }) {
   return (
     <Layout>
-      <Banner date="23-09-2024" place="LISBON, PT" status="Planned" />
+      <Banner date="09-10-2024" place="REYJAVÍK, ISL" status="Planned" />
       <BlogPosts posts={posts} />
     </Layout>
   );
